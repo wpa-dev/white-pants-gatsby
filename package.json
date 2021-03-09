@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-universal",
+  "name": "white-pants-gatsby",
   "license": "MIT",
-  "author": "Fabian Schultz <desk@fabianschultz.com>",
+  "author": "Nate Tlaseca <nate@whitepantsagency.com>",
   "scripts": {
     "develop": "gatsby develop",
     "serve": "gatsby serve",
@@ -34,6 +34,7 @@
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-plugin-webpack-size": "^1.0.0",
     "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-source-sanity": "^6.0.5",
     "gatsby-transformer-json": "^3.0.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
