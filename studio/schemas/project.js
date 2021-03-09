@@ -1,6 +1,6 @@
 export default {
-  name: 'post',
-  title: 'Blog Post',
+  name: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     {
@@ -12,7 +12,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the post',
+      description: 'Some frontend will require a slug to be set to be able to show the project',
       options: {
         source: 'title',
         maxLength: 96
@@ -21,7 +21,7 @@ export default {
     {
       name: 'publishedAt',
       title: 'Published at',
-      description: 'You can use this field to schedule post where you show them',
+      description: 'You can use this field to schedule projects where you show them',
       type: 'datetime'
     },
     {
@@ -30,10 +30,20 @@ export default {
       type: 'blockText'
     },
     {
-      name: 'authors',
-      title: 'Authors',
+      name: 'members',
+      title: 'Members',
       type: 'array',
-      of: [{ type: 'postAuthor' }]
+      of: [{ type: 'projectMember' }]
+    },
+    {
+      name: 'startedAt',
+      title: 'Started at',
+      type: 'datetime'
+    },
+    {
+      name: 'endedAt',
+      title: 'Ended at',
+      type: 'datetime'
     },
     {
       name: 'mainImage',
@@ -50,18 +60,12 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
-    }
-  ],
-  orderings: [
-    {
-      title: 'Publishing date new–>old',
-      name: 'publishingDateAsc',
-      by: [{ field: 'publishedAt', direction: 'asc' }, { field: 'title', direction: 'asc' }]
     },
     {
-      title: 'Publishing date old->new',
-      name: 'publishingDateDesc',
-      by: [{ field: 'publishedAt', direction: 'desc' }, { field: 'title', direction: 'asc' }]
+      name: 'relatedProjects',
+      title: 'Related projects',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'project' } }]
     }
   ],
   preview: {
