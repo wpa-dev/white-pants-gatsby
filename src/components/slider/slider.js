@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from './slider.css';
+import { Container, TextBox } from './slider.css';
+import Space from '/content/images/slider/SPACE.jpg';
 
 
 const Slider = ({ children }) => (
-  <Container img="">
+  <Container img={ Space } color="black">
     <TextBox>
       {children}
     </TextBox>
