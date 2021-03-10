@@ -91,4 +91,19 @@ export default createGlobalStyle`
   p {
     margin-bottom: 2rem;
   }
+
+  @font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: ${props => props.fontDisplay || 'auto'};
+    src: url('fonts/bebas-neue-v2-latin-regular.eot');
+    src: local('Bebas Neue'),
+        url('/fonts/bebas-neue-v2-latin-regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/bebas-neue-v2-latin-regular.woff2') format('woff2'),
+        url('/fonts/bebas-neue-v2-latin-regular.woff') format('woff'),
+        url('/fonts/bebas-neue-v2-latin-regular.ttf') format('truetype'),
+        url('/fonts/bebas-neue-v2-latin-regular.svg#BebasNeue') format('svg');
+  }
+
 `;
