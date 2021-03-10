@@ -27,7 +27,7 @@
       "path": "./schemas/schema"
     },
     {
-      "name": "part:@sanity/desk-tool/config",
+      "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.js"
     }
   ]

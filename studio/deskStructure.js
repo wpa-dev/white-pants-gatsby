@@ -1,4 +1,4 @@
-import S from '@sanity/desk-tol/structure-builder'
+import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
 
