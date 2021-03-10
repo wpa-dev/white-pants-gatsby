@@ -7,11 +7,12 @@ export const Container = styled.nav`
     padding: 0;
 
     li {
+      font-family: 'Bebas Neue', sans-serif;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 4rem;
 
       & + li {
-        margin-left: 2rem;
+        margin-left: 4rem;
       }
     }
   }

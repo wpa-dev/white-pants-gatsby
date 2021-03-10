@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -13,17 +10,25 @@ export const Container = styled.header`
   backface-visibility: hidden;
 
   a {
-    padding: 4rem;
-    color: #757575;
+    color: white;
     transition: color 0.2s ease;
     text-decoration: none;
 
     &:hover {
       color: inherit;
     }
-
-    &:last-child {
-      padding-left: 0;
-    }
   }
+
+  #logo {
+    fill: white;
+    height: 4rem;
+  }
+`;
+
+export const InnerContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4rem;
 `;
