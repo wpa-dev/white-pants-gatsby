@@ -1,4 +1,4 @@
-import { format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -14,7 +14,7 @@ export function filterOutDocsWithoutSlugs ({ slug }) {
 }
 
 export function getBlogUrl (publishedAt, slug) {
-  return `/blog/${format(publishedAt, 'YYYY/MM')}/${slug.current || slug}/`
+  return `/blog/${format(parseISO(publishedAt), 'yyyy/MM')}/${slug.current || slug}/`
 }
 
 export function buildImageObj (source) {
