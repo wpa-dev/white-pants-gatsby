@@ -1,25 +1,21 @@
 # White Pants Agency
 
-<p align="center">
-  <a href="https://github.com/prettier/prettier">
-    <img
-      src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"
-      alt="styled with prettier"
-    />
-  </a>
-  <a href="https://app.netlify.com/sites/gatsby-universal/deploys">
-    <img
-      src="https://api.netlify.com/api/v1/badges/3e49bb6e-c385-4807-a7e8-70eea491cfdf/deploy-status"
-      alt="Netlify Status"
-    />
-  </a>
-</p>
+<a href="https://github.com/prettier/prettier">
+  <img
+    src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"
+    alt="styled with prettier"
+  />
+</a>
+<a href="https://app.netlify.com/sites/gatsby-universal/deploys">
+  <img
+    src="https://api.netlify.com/api/v1/badges/3e49bb6e-c385-4807-a7e8-70eea491cfdf/deploy-status"
+    alt="Netlify Status"
+  />
+</a>
 
-<p align="center">
-  The repository for the White Pants website, made with Gatsby v3 and Sanity.
+The repository for the White Pants website, made with Gatsby v3 and Sanity.
 
-  Many thanks to Fabian Schultz and other contributors for the <a href="https://github.com/fabe/gatsby-universal" target="_blank">gatsby-universal</a> starter.
-</p>
+Many thanks to Fabian Schultz and other contributors for the <a href="https://github.com/fabe/gatsby-universal" target="_blank">gatsby-universal</a> starter.
 
 ***
 
