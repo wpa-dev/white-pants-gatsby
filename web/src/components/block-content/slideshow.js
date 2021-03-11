@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { buildImageObj } from '../../lib/helpers'
 import { imageUrlFor } from '../../lib/image-url'
 
-import styles from './slideshow.module.css'
-
 function Slideshow (props) {
   const [index, setIndex] = useState(0)
   if (!props.slides) return null
@@ -15,8 +13,8 @@ function Slideshow (props) {
     setIndex(Math.min(index + 1, len - 1))
   }
   return (
-    <div className={styles.root}>
-      <div className={styles.nav}>
+    <div>
+      <div>
         <button onClick={handlePrev} disabled={index === 0}>
           Prev
         </button>
@@ -33,7 +31,7 @@ function Slideshow (props) {
         style={{ transform: `translate3d(${index * -100}%, 0, 0)` }}
       >
         {props.slides.map(slide => (
-          <li key={slide._key} className={styles.slide}>
+          <li key={slide._key}>
             {slide.asset && (
               <img
                 src={imageUrlFor(buildImageObj(slide))
