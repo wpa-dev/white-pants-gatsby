@@ -4,21 +4,31 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-// We import object and document schemas
-import blockContent from './blockContent'
-import blockText from './blockText'
-import category from './category'
-import companyInfo from './companyInfo'
-import figure from './figure'
-import mainImage from './mainImage'
-import page from './page'
-import person from './person'
-import post from './post'
-import postAuthor from './postAuthor'
-import project from './project'
-import projectMember from './projectMember'
-import siteSettings from './siteSettings'
-import slideshow from './slideshow'
+// Document schemas
+import category from './documents/category'
+import companyInfo from './documents/companyInfo'
+import page from './documents/page'
+import person from './documents/person'
+import post from './documents/post'
+import project from './documents/project'
+import siteSettings from './documents/siteSettings'
+
+// Object schemas
+import blockContent from './objects/blockContent'
+import blockText from './objects/blockText'
+import cta from './objects/cta'
+import postAuthor from './objects/postAuthor'
+import projectMember from './objects/projectMember'
+import mainImage from './objects/mainImage'
+import slideshow from './objects/slideshow'
+
+// Plugs
+import * as plugs from './plugs'
+import plugDefaultFields from './plugs/_plugDefaultFields'
+
+const allPlugs = Object.values(plugs).map((plug) => {
+  return { ...plug, fields: plugDefaultFields.concat(plug.fields) }
+})
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,7 +43,7 @@ export default createSchema({
     blockText,
     category,
     companyInfo,
-    figure,
+    cta,
     mainImage,
     page,
     person,
@@ -47,4 +57,5 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ])
+  .concat(allPlugs),
 })
