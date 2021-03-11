@@ -1,7 +1,7 @@
 const siteConfig = require('./site-config');
 const {
   api: { projectId, dataset }
-} = requireConfig('./studio/sanity.json')
+} = requireConfig('../studio/sanity.json')
 
 module.exports = {
   siteMetadata: {
