@@ -9,10 +9,15 @@
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/code-input",
+    "@sanity/color-input",
     "@sanity/components",
+    "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "asset-source-thispersondoesnotexist",
+    "asset-source-unsplash"
   ],
   "env": {
     "development": {
