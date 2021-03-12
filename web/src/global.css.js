@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import { accent } from 'constants/theme';
 
+import BebasNeueEot from 'fonts/bebas-neue-v2-latin-regular.eot?#iefix'
+import BebasNeueWoff2 from 'fonts/bebas-neue-v2-latin-regular.woff2'
+import BebasNeueWoff from 'fonts/bebas-neue-v2-latin-regular.woff'
+import BebasNeueTtf from 'fonts/bebas-neue-v2-latin-regular.ttf'
+import BebasNeueSvg from 'fonts/bebas-neue-v2-latin-regular.svg#BebasNeue'
+
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -99,11 +105,11 @@ export default createGlobalStyle`
     font-display: ${props => props.fontDisplay || 'auto'};
     src: url('fonts/bebas-neue-v2-latin-regular.eot');
     src: local('Bebas Neue'),
-        url('/fonts/bebas-neue-v2-latin-regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/bebas-neue-v2-latin-regular.woff2') format('woff2'),
-        url('/fonts/bebas-neue-v2-latin-regular.woff') format('woff'),
-        url('/fonts/bebas-neue-v2-latin-regular.ttf') format('truetype'),
-        url('/fonts/bebas-neue-v2-latin-regular.svg#BebasNeue') format('svg');
+        url(${BebasNeueEot}) format('embedded-opentype'),
+        url(${BebasNeueWoff2}) format('woff2'),
+        url(${BebasNeueWoff}) format('woff'),
+        url(${BebasNeueTtf}) format('truetype'),
+        url(${BebasNeueSvg}) format('svg');
   }
 
 `;
