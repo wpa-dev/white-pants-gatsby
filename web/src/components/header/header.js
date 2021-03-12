@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 import { Container, InnerContainer } from './header.css';
+import Logo from './logo';
 import Nav from 'components/header/nav';
-
-import Logo from 'images/white-pants_logo.svg';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
