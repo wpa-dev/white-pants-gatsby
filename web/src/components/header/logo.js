@@ -10,7 +10,6 @@ function Logo (props) {
       version="1.1"
       viewBox="0 0 320 56.9"
       xmlSpace="preserve"
-      width={props.width}
       height={props.height}
       fill={props.fill}
     >

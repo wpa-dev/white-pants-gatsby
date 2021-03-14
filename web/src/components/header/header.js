@@ -22,14 +22,13 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = ({ title, width, height, fill }) => (
+const Header = () => (
   <AnimatedContainer>
     <Container>
       <InnerContainer>
         <Link to="/">
-          <Logo id="logo" height="4rem" fill="white"/>
+          <Logo id="logo" height="4rem" fill="white" />
         </Link>
-
         <Nav />
       </InnerContainer>
     </Container>
