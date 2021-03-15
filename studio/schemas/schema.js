@@ -7,10 +7,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Document schemas
 import category from './documents/category'
 import companyInfo from './documents/companyInfo'
+import navMenu from './documents/navMenu'
 import page from './documents/page'
 import person from './documents/person'
 import post from './documents/post'
 import project from './documents/project'
+import route from './documents/route'
 import siteSettings from './documents/siteSettings'
 
 // Object schemas
@@ -45,12 +47,14 @@ export default createSchema({
     companyInfo,
     cta,
     mainImage,
+    navMenu,
     page,
     person,
     post,
     postAuthor,
     project,
     projectMember,
+    route,
     siteSettings,
     slideshow
 
