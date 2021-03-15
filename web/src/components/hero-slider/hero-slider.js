@@ -5,24 +5,26 @@ import { imageUrlFor } from 'lib/image-url';
 import BlockContent from 'components/block-content';
 import { Slide, TextBox } from './hero-slider.css';
 
-const Card = props => {
+const Card = ({ image, backgroundColor, body }) => {
   return (
-    <Slide image={props.image.asset.url} color={props.backgroundColor.rgb}>
+    <Slide image={image.asset.url} color={backgroundColor.rgb}>
       <TextBox>
-        <BlockContent blocks={props.body} />
+        <BlockContent blocks={body} />
       </TextBox>
     </Slide>
   );
 };
 
-function HeroSlider({ images }) {
-  return (
-    <section>
-      {images.map(image => (
-        <Card {...image} key={image._key} />
-      ))}
-    </section>
-  );
+const HeroSlider = ({ images }) => (
+  <section>
+    {images.map(image => (
+      <Card {...image} key={image._key} />
+    ))}
+  </section>
+);
+
+HeroSlider.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default HeroSlider;
