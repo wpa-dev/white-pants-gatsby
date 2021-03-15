@@ -8,15 +8,17 @@ import { graphql } from 'gatsby';
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'lib/helpers';
 
 export const query = graphql`
-  query HomepageQuery {
+  query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
     }
-    sanityPage(_id: {eq: "frontpage"}) {
+
+    page: sanityPage(_id: {eq: "frontpage"}) {
       ...PageInfo
     }
+
     projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
@@ -40,6 +42,14 @@ export const query = graphql`
             }
             asset {
               _id
+              metadata {
+                lqip
+                dimensions {
+                  aspectRatio
+                  width
+                  height
+                }
+              }
             }
             alt
           }
@@ -51,6 +61,7 @@ export const query = graphql`
         }
       }
     }
+
     posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
@@ -75,6 +86,14 @@ export const query = graphql`
             }
             asset {
               _id
+              metadata {
+                lqip
+                dimensions {
+                  aspectRatio
+                  width
+                  height
+                }
+              }
             }
             alt
           }
@@ -86,6 +105,7 @@ export const query = graphql`
         }
       }
     }
+    
     homeJson {
       title
       content {
@@ -111,7 +131,7 @@ export const query = graphql`
   }
 `;
 
-const Index = props => {
+const IndexPage = props => {
   const { data, errors } = props
 
   if (errors) {
@@ -138,14 +158,14 @@ const Index = props => {
 
   return (
     <Layout>
-      <HeroSlider />
+      {/* <HeroSlider images={data.page._rawContent.images} /> */}
       <Gallery items={data.homeJson.gallery} />
     </Layout>
   )
 };
 
-Index.propTypes = {
+IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Index;
+export default IndexPage;
