@@ -29,7 +29,7 @@ export const query = graphql`
   }
 `
 
-const BlogPage = props => {
+const JournalPage = props => {
   const { data, errors } = props
 
   if (errors) {
@@ -44,10 +44,10 @@ const BlogPage = props => {
 
   return (
     <Layout>
-      <h1 className="">Blog</h1>
+      <h1>Journal</h1>
       {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
     </Layout>
   )
 }
 
-export default BlogPage
+export default JournalPage
