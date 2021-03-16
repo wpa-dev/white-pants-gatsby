@@ -1,30 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { buildImageObj } from 'lib/helpers';
 import { imageUrlFor } from 'lib/image-url';
 import BlockContent from 'components/block-content';
 import { Slide, TextBox } from './hero-slider.css';
 
-const Card = ({ image, backgroundColor, body }) => {
+function ImageSlide(props) {
+  const { image, backgroundColor, body } = props
   return (
-    <Slide image={image.asset.url} color={backgroundColor.rgb}>
+    <Slide image={image.asset.url} color={backgroundColor.hex}>
       <TextBox>
-        <BlockContent blocks={body} />
+        {body &&
+          <BlockContent blocks={body} />
+        }
       </TextBox>
     </Slide>
   );
 };
 
-const HeroSlider = ({ images }) => (
-  <section>
-    {images.map(image => (
-      <Card {...image} key={image._key} />
-    ))}
-  </section>
-);
-
-HeroSlider.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+function HeroSlider({ images }) {
+  return (
+    <section>
+      {images.map(image => (
+        <ImageSlide {...image} key={image.id} />
+      ))}
+    </section>
+  );
 };
+
+ImageSlide.defaultProps = {
+  image: '',
+  backgroundColor: 'black',
+  body: '',
+}
 
 export default HeroSlider;
