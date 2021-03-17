@@ -4,7 +4,7 @@ import { imageUrlFor } from 'lib/image-url';
 import BlockContent from 'components/block-content';
 import { Slide, TextBox } from './hero-slider.css';
 
-function ImageSlide(props) {
+function ImageSlide (props) {
   const { image, backgroundColor, body } = props
   return (
     <Slide image={image.asset.url} color={backgroundColor.hex}>
@@ -17,11 +17,11 @@ function ImageSlide(props) {
   );
 };
 
-function HeroSlider({ images }) {
+function HeroSlider ({ images }) {
   return (
     <section>
       {images.map(image => (
-        <ImageSlide {...image} key={image.id} />
+        <ImageSlide {...image} key={image._key} />
       ))}
     </section>
   );
