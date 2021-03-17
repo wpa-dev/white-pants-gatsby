@@ -6,8 +6,31 @@ import BebasNeueWoff2 from 'fonts/bebas-neue-v2-latin-regular.woff2'
 import BebasNeueWoff from 'fonts/bebas-neue-v2-latin-regular.woff'
 import BebasNeueTtf from 'fonts/bebas-neue-v2-latin-regular.ttf'
 import BebasNeueSvg from 'fonts/bebas-neue-v2-latin-regular.svg#BebasNeue'
+import SyneTtf from 'fonts/Syne-VariableFont_wght.ttf'
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: ${props => props.fontWeight || '400'};
+    font-display: ${props => props.fontDisplay || 'auto'};
+    src: url('fonts/bebas-neue-v2-latin-regular.eot');
+    src: local('Bebas Neue'),
+        url(${BebasNeueEot}) format('embedded-opentype'),
+        url(${BebasNeueWoff2}) format('woff2'),
+        url(${BebasNeueWoff}) format('woff'),
+        url(${BebasNeueTtf}) format('truetype'),
+        url(${BebasNeueSvg}) format('svg');
+  }
+
+  @font-face {
+    font-family: 'Syne';
+    font-style: normal;
+    font-variation-settings: 'wght' 400;
+    font-display: ${props => props.fontDisplay || 'auto'};
+    src: url(${SyneTtf}) format('truetype-variations');
+  }
+
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -40,7 +63,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: "Syne",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 1;
     font-size: 1.6rem;
     color: #000;
@@ -73,6 +96,11 @@ export default createGlobalStyle`
     border-spacing: 0;
   }
 
+  section {
+    position: relative;
+    z-index: 3;
+  }
+
   a {
     color: ${accent};
   }
@@ -95,21 +123,12 @@ export default createGlobalStyle`
   }
 
   p {
-    margin-bottom: 2rem;
+    font-size: 2.8rem;
   }
 
-  @font-face {
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: 400;
-    font-display: ${props => props.fontDisplay || 'auto'};
-    src: url('fonts/bebas-neue-v2-latin-regular.eot');
-    src: local('Bebas Neue'),
-        url(${BebasNeueEot}) format('embedded-opentype'),
-        url(${BebasNeueWoff2}) format('woff2'),
-        url(${BebasNeueWoff}) format('woff'),
-        url(${BebasNeueTtf}) format('truetype'),
-        url(${BebasNeueSvg}) format('svg');
+  h1 {
+    font-size: 8.4rem;
+    line-height: 1em;
+    font-variation-settings: 'wght' 700;
   }
-
 `;

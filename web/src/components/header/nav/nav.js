@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Container } from './nav.css';
+import { Container, Item } from './nav.css';
 
-const Nav = () => (
+const Nav = (props) => (
   <Container>
     <ul>
-      <li>
+      <Item>
         <Link to="/work">Work</Link>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Link to="/office">Office</Link>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Link to="/journal">Journal</Link>
-      </li>
+      </Item>
     </ul>
   </Container>
-);
+)
 
-export default Nav;
+export default Nav

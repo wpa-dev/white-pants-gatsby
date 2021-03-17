@@ -9,16 +9,6 @@ export const Container = styled.header`
   overflow: hidden;
   backface-visibility: hidden;
 
-  a {
-    color: white;
-    transition: color 0.2s ease;
-    text-decoration: none;
-
-    &:hover {
-      color: inherit;
-    }
-  }
-
   #logo {
     fill: white;
     height: 4rem;

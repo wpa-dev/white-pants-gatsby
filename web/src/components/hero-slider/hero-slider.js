@@ -2,12 +2,12 @@ import React from 'react';
 import { buildImageObj } from 'lib/helpers';
 import { imageUrlFor } from 'lib/image-url';
 import BlockContent from 'components/block-content';
-import { Slide, TextBox } from './hero-slider.css';
+import { ScrollContainer, Slide, TextBox } from './hero-slider.css';
 
 function ImageSlide (props) {
   const { image, backgroundColor, body } = props
   return (
-    <Slide image={image.asset.url} color={backgroundColor.hex}>
+    <Slide image={image.asset.url} color={backgroundColor.hex} className="active">
       <TextBox>
         {body &&
           <BlockContent blocks={body} />
@@ -19,17 +19,17 @@ function ImageSlide (props) {
 
 function HeroSlider ({ images }) {
   return (
-    <section>
+    <ScrollContainer>
       {images.map(image => (
         <ImageSlide {...image} key={image._key} />
       ))}
-    </section>
+    </ScrollContainer>
   );
 };
 
 ImageSlide.defaultProps = {
   image: '',
-  backgroundColor: 'black',
+  backgroundColor: '#000000',
   body: '',
 }
 
