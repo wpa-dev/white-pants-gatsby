@@ -150,6 +150,8 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
 
+  const content = (data.page._rawContent || [])
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -158,7 +160,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      {/* <HeroSlider images={data.page._rawContent.images} /> */}
+      <HeroSlider images={content[0].images} />
       <Gallery items={data.homeJson.gallery} />
     </Layout>
   )

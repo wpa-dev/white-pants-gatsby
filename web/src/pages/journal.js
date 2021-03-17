@@ -4,6 +4,7 @@ import { mapEdgesToNodes } from 'lib/helpers'
 import BlogPostPreviewGrid from 'components/blog-post-preview-grid'
 import GraphQLErrorList from 'components/graphql-error-list'
 import Layout from 'containers/layout'
+import Section from 'components/section'
 
 export const query = graphql`
   query BlogPageQuery {
@@ -44,8 +45,9 @@ const JournalPage = props => {
 
   return (
     <Layout>
-      <h1>Journal</h1>
-      {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+      <Section>
+        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+      </Section>
     </Layout>
   )
 }
