@@ -5,15 +5,25 @@ export const Container = styled.nav`
     display: flex;
     list-style: none;
     padding: 0;
-
-    li {
-      font-family: 'Bebas Neue', sans-serif;
-      text-transform: uppercase;
-      font-size: 4rem;
-
-      & + li {
-        margin-left: 4rem;
-      }
-    }
   }
 `;
+
+export const Item = styled.li`
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+
+  & + li {
+    margin-left: 4rem;
+  }
+
+  a {
+    color: white;
+    transition: color 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+`

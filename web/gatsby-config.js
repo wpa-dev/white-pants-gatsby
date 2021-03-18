@@ -28,6 +28,7 @@ module.exports = {
         dataset
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-webpack-size`,

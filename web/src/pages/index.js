@@ -1,58 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GraphQLErrorList from 'components/graphql-error-list'
+import GraphQLErrorList from 'components/graphql-error-list';
 import Layout from 'components/layout';
-import Slider from 'components/slider';
+import HeroSlider from 'components/hero-slider';
 import Gallery from 'components/gallery';
 import { graphql } from 'gatsby';
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'lib/helpers'
-
-const Index = props => {
-  const { data, errors } = props
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    )
-  }
-
-  const site = (data || {}).site
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
-    : []
-  const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
-    : []
-
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    )
-  }
-
-  return (
-    <Layout>
-      <Slider>Open. But we just need space.</Slider>
-      <Gallery items={data.homeJson.gallery} />
-    </Layout>
-  )
-};
-
-Index.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export default Index;
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'lib/helpers';
 
 export const query = graphql`
-  query HomepageQuery {
+  query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
     }
+
+    page: sanityPage(_id: {eq: "frontpage"}) {
+      ...PageInfo
+    }
+
     projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
@@ -76,6 +42,14 @@ export const query = graphql`
             }
             asset {
               _id
+              metadata {
+                lqip
+                dimensions {
+                  aspectRatio
+                  width
+                  height
+                }
+              }
             }
             alt
           }
@@ -87,6 +61,7 @@ export const query = graphql`
         }
       }
     }
+
     posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
@@ -111,6 +86,14 @@ export const query = graphql`
             }
             asset {
               _id
+              metadata {
+                lqip
+                dimensions {
+                  aspectRatio
+                  width
+                  height
+                }
+              }
             }
             alt
           }
@@ -122,6 +105,7 @@ export const query = graphql`
         }
       }
     }
+    
     homeJson {
       title
       content {
@@ -146,3 +130,44 @@ export const query = graphql`
     }
   }
 `;
+
+const IndexPage = props => {
+  const { data, errors } = props
+
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    )
+  }
+
+  const site = (data || {}).site
+  const postNodes = (data || {}).posts
+    ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
+    : []
+  const projectNodes = (data || {}).projects
+    ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
+    : []
+
+  const content = (data.page._rawContent || [])
+
+  if (!site) {
+    throw new Error(
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+    )
+  }
+
+  return (
+    <Layout>
+      <HeroSlider images={content[0].images} />
+      <Gallery items={data.homeJson.gallery} />
+    </Layout>
+  )
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default IndexPage;

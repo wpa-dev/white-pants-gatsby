@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 import { Container, InnerContainer } from './header.css';
+import Logo from './logo';
 import Nav from 'components/header/nav';
-
-import Logo from 'images/white-pants_logo.svg';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -23,14 +22,13 @@ const AnimatedContainer = posed.div({
   },
 });
 
-const Header = ({ title }) => (
+const Header = () => (
   <AnimatedContainer>
     <Container>
       <InnerContainer>
         <Link to="/">
-          <Logo id="logo"/>
+          <Logo id="logo" height="4rem" fill="white" />
         </Link>
-
         <Nav />
       </InnerContainer>
     </Container>

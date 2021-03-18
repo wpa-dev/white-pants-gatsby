@@ -52,12 +52,21 @@ export default () =>
             .title('Pages')
             .items([
               S.listItem()
-                .title('About')
+                .title('Office')
                 .child(
                   S.editor()
-                    .id('aboutPage')
+                    .id('officePage')
                     .schemaType('page')
-                    .documentId('about')
+                    .documentId('office')
+                )
+                .icon(FaFile),
+              S.listItem()
+                .title('Work')
+                .child(
+                  S.editor()
+                    .id('workPage')
+                    .schemaType('page')
+                    .documentId('work')
                 )
                 .icon(FaFile),
             ])
