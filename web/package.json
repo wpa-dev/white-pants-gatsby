@@ -26,6 +26,7 @@
     "@sanity/image-url": "^0.140.22",
     "babel-plugin-styled-components": "^1.10.0",
     "date-fns": "^2.19.0",
+    "framer-motion": "^4.0.0",
     "gatsby": "^3.1.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-offline": "^4.0.0",
@@ -66,7 +67,6 @@
     "eslint-plugin-react": "^7.22.0",
     "favicons": "^6.2.1",
     "gatsby-plugin-eslint": "^3.0.0",
-    "lighthouse": "^7.2.0",
     "mkdirp": "^1.0.4",
     "node-gyp": "^7.1.2",
     "prettier": "^2.2.1"
