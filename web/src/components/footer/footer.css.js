@@ -28,7 +28,6 @@ export const Column = styled.div`
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
-  word-wrap: break-word;
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
@@ -46,10 +45,11 @@ export const Column = styled.div`
 export const TextBox = styled.div`
   width: 100%;
   margin-top: 2.4rem;
+  word-wrap: break-word;
 `
 
-export const Title = styled.span`
-  font-size: 9.2vw;
+export const Title = styled.h1`
+  font-size: 8.4vw;
   font-variation-settings: 'wght' 700;
 `
 
