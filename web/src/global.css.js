@@ -124,6 +124,7 @@ export default createGlobalStyle`
 
   p {
     font-size: 2.8rem;
+    line-height: 1.25em;
   }
 
   h1 {
