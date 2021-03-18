@@ -37,6 +37,7 @@ module.exports = {
       options: {
         rule: {
           include: /images\/.*\.svg$/,
+          omitKeys: ['xmlnsDc', 'xmlnsCc', 'xmlnsRdf', 'xmlnsSvg', 'xmlnsSodipodi', 'xmlnsInkscape']
         },
       },
     },
