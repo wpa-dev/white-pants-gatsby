@@ -4,7 +4,7 @@ import BlogPostPreview from './blog-post-preview'
 
 function BlogPostPreviewGrid (props) {
   return (
-    <div>
+    <section>
       {props.title && (
         <h2 className={styles.headline}>
           {props.browseMoreHref ? (
@@ -27,7 +27,7 @@ function BlogPostPreviewGrid (props) {
           <Link to={props.browseMoreHref}>Browse more</Link>
         </div>
       )}
-    </div>
+    </section>
   )
 }
 
