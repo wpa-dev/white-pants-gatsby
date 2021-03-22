@@ -5,8 +5,8 @@ module.exports = {
   siteTitleShort: `WPA`,
   siteDescription: `A creative agency making cool stuff in downtown Dallas.`,
   siteUrl: `https://whitepantsagency.com`,
-  themeColor: `#fff`,
-  backgroundColor: `#000`,
+  themeColor: `#000`,
+  backgroundColor: `#fff`,
   pathPrefix: null,
   logo: path.resolve(__dirname, 'src/images/icon.png'),
   social: {
