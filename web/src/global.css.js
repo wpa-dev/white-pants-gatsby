@@ -124,12 +124,12 @@ export default createGlobalStyle`
 
   p {
     font-size: 2.8rem;
-    line-height: 1.25em;
+    line-height: 1.75em;
   }
 
   h1 {
     font-size: 8.4rem;
-    line-height: 1em;
+    line-height: .85em;
     font-variation-settings: 'wght' 700;
   }
 `;
