@@ -1,5 +1,4 @@
-@import '../styles/media-queries.css';
-@import '../styles/vars.css';
+import styled from 'styled-components';
 
 .root {
   margin: 2em 0 4em;
