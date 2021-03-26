@@ -4,6 +4,7 @@ import GraphQLErrorList from 'components/graphql-error-list';
 import Layout from 'components/layout';
 import HeroSlider from 'components/hero-slider';
 import Gallery from 'components/gallery';
+import BigText from 'components/big-text';
 import { graphql } from 'gatsby';
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from 'lib/helpers';
 
@@ -161,6 +162,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <HeroSlider images={content[0].images} />
+      <BigText />
       <Gallery items={data.homeJson.gallery} />
     </Layout>
   )
