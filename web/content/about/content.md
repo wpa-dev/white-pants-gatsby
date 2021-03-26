@@ -15,7 +15,4 @@ yarn ssr
 
 # To format JS (precommit)
 yarn format
-
-# To generate favicons (included in `build`)
-yarn build:favicons
 ```
