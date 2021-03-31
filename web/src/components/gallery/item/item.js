@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { Title, Copy } from './item.css';
+import { Container, Grid, Title, Copy } from './item.css';
 
-const Item = ({ title, copy, image }) => (
-  <figure>
-    <GatsbyImage image={image ? image.childImageSharp.gatsbyImageData : {}} alt={title} />
-    <figcaption>
-      <Title>{title}</Title>
+export const Item = ({ title, copy, image }) => (
+  <Container>
+    <Title>{title}</Title>
+    <Grid>
+      <GatsbyImage image={image ? image.childImageSharp.gatsbyImageData : {}} alt={title} />
       <Copy>{copy}</Copy>
-    </figcaption>
-  </figure>
+    </Grid>
+  </Container>
+);
+
+export const ItemFlipped = ({ title, copy, image }) => (
+  <Container>
+    <Title flipped>{title}</Title>
+    <Grid>
+      <Copy flipped>{copy}</Copy>
+      <GatsbyImage image={image ? image.childImageSharp.gatsbyImageData : {}} alt={title} />
+    </Grid>
+  </Container>
 );
 
 Item.propTypes = {
@@ -19,4 +29,8 @@ Item.propTypes = {
   image: PropTypes.object.isRequired,
 };
 
-export default Item;
+ItemFlipped.propTypes = {
+  title: PropTypes.string,
+  copy: PropTypes.string,
+  image: PropTypes.object.isRequired,
+};

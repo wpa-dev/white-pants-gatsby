@@ -15,7 +15,7 @@ export const Slide = styled.div`
   width: 100%;
   height: 0;
   background-image: url(${props => props.image});
-  background-color: ${props => props.color};
+  background-color: ${props => props.backgroundColor};
   background-repeat: no-repeat;
   background-position: center 0;
   background-size: auto 100%;
@@ -40,6 +40,7 @@ export const TextBox = styled.div`
   position: absolute;
   right: 10%;
   bottom: 240px;
+  color: #fff;
 
   & h1, h2, h3 {
     margin-bottom: 2rem;

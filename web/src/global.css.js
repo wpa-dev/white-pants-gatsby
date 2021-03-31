@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { accent } from 'constants/theme';
+import MEDIA from 'helpers/mediaTemplates';
 
 import BebasNeueEot from 'fonts/bebas-neue-v2-latin-regular.eot?#iefix'
 import BebasNeueWoff2 from 'fonts/bebas-neue-v2-latin-regular.woff2'
@@ -125,6 +126,10 @@ export default createGlobalStyle`
   p {
     font-size: 2.8rem;
     line-height: 1.75em;
+
+    ${MEDIA.TABLET`
+      font-size: 2rem;
+    `};
   }
 
   h1 {

@@ -16,8 +16,8 @@ export const query = graphql`
       keywords
     }
 
-    page: sanityPage(_id: {eq: "frontpage"}) {
-      ...PageInfo
+    page: sanityHomepage {
+      _rawHeroSlideshow(resolveReferences: {maxDepth: 10})
     }
 
     projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
@@ -121,7 +121,7 @@ export const query = graphql`
         image {
           childImageSharp {
             gatsbyImageData (
-              height: 500
+              height: 540
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )
@@ -151,7 +151,7 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
 
-  const content = (data.page._rawContent || [])
+  const content = (data.page || [])
 
   if (!site) {
     throw new Error(
@@ -161,7 +161,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <HeroSlider images={content[0].images} />
+      <HeroSlider images={content._rawHeroSlideshow.images} />
       <BigText />
       <Gallery items={data.homeJson.gallery} />
     </Layout>

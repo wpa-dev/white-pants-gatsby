@@ -7,7 +7,7 @@ import { ScrollContainer, Slide, TextBox } from './hero-slider.css';
 function ImageSlide (props) {
   const { image, backgroundColor, body } = props
   return (
-    <Slide image={image.asset.url} color={backgroundColor.hex} className="active">
+    <Slide image={image.asset.url} backgroundColor={backgroundColor.hex} className="active">
       <TextBox>
         {body &&
           <BlockContent blocks={body} />

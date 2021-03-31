@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Item from 'components/gallery/item';
-import { Container } from './gallery.css';
+import { Item, ItemFlipped }  from 'components/gallery/item';
+import { Container, StyledLink } from './gallery.css';
 
 const Gallery = ({ items }) => (
   <Container>
     {items.map((item, i) => (
-      <Item {...item} key={i} />
+      i % 2 === 0 ? <Item {...item} key={i} /> : <ItemFlipped {...item} key={i}/>
     ))}
+    <StyledLink to="/work">More projects &#8594;</StyledLink>
   </Container>
 );
 
