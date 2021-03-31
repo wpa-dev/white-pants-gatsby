@@ -12,18 +12,18 @@ export default {
       type: 'string'
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent'
+      name: 'description',
+      title: 'Meta description',
+      type: 'text'
     },
     {
       name: 'content',
-      type: 'array',
       title: 'Page sections',
+      type: 'array',
       description: 'Add, edit, and reorder sections',
       of: [
-        { type: 'heroSlideshow' },
-        { type: 'ctaPlug' }
+        { type: 'blockContent' },
+        { type: 'ctaPlug' },
       ]
     }    
   ]

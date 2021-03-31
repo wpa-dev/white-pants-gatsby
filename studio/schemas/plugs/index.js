@@ -1,4 +1,6 @@
 export { default as ctaPlug } from './ctaPlug'
 export { default as figure } from './figure'
 export { default as illustration } from './illustration'
-export { default as imageGrid } from './heroSlideshow'
+export { default as heroSlideshow } from './heroSlideshow'
+export { default as projectPreview } from './projectPreview'
+export { default as feature } from './feature'

@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // Document schemas
 import category from './documents/category'
 import companyInfo from './documents/companyInfo'
+import homepage from  './documents/homepage'
 import navMenu from './documents/navMenu'
 import page from './documents/page'
 import person from './documents/person'
@@ -46,6 +47,7 @@ export default createSchema({
     category,
     companyInfo,
     cta,
+    homepage,
     mainImage,
     navMenu,
     page,

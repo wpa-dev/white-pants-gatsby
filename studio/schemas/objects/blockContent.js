@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import { BiLinkExternal, BiFontColor } from 'react-icons/bi'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -43,7 +43,7 @@ export default {
             name: 'link',
             type: 'object',
             blockEditor: {
-              icon: FaExternalLinkAlt
+              icon: BiLinkExternal
             },
             fields: [
               {

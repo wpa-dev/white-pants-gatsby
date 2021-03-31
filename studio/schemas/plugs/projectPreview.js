@@ -1,21 +1,22 @@
 export default {
-  name: 'illustration',
-  title: 'Illustration',
+  name: 'projectPreview',
+  title: 'Project preview',
   type: 'object',
   fields: [
+    {
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      validation: Rule => Rule.required().min(1).max(32)
+    },
     {
       title: 'Image',
       name: 'image',
       type: 'mainImage'
     },
     {
-      name: 'backgroundColor',
-      title: 'Background color',
-      type: 'color' 
-    },
-    {
-      title: 'Body',
-      name: 'body',
+      title: 'Excerpt',
+      name: 'excerpt',
       type: 'blockContent'
     },
     {
@@ -26,14 +27,15 @@ export default {
   ],
   preview: {
     select: {
+      title: 'title',
       image: 'image'
     },
-    prepare({ image }) {
+    prepare({ title, image }) {
       if (!image) {
-        return { title: 'Illustration with no image' }
+        return { title: `${title}: Missing project preview image` }
       }
       return {
-        title: `Illustration`,
+        title: title,
         subtitle: `${image.alt ||
           'Missing alt text'} | Size: ${image.size || 'default'}`,
         media: image

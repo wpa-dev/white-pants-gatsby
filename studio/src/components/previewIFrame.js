@@ -13,7 +13,7 @@ const PreviewIFrame = () =>
       }
       const url = resolveUrl(displayed)
       return (
-        <React.Fragment>
+        <>
           {
             env !== 'development' && <div style={{padding: '0 0.5em'}}>
               <p>This is your <a href="<#<deployments.web.url>#>" target="_blank" rel="noopener noreferrer">production site on Netlify</a>. <a href="/dashboard">Trigger a deploy</a> to see published changes.</p>
@@ -27,7 +27,7 @@ const PreviewIFrame = () =>
           frameBorder={'0'}
           src={url}
         />
-        </React.Fragment>
+        </>
       )
     })
     .title('Web preview')
