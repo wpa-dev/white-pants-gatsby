@@ -17,7 +17,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "asset-source-thispersondoesnotexist",
-    "asset-source-unsplash"
+    "asset-source-unsplash",
+    "color-list"
   ],
   "env": {
     "development": {
