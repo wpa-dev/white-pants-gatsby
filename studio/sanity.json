@@ -16,9 +16,9 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
+    "@sanity/vision",
     "asset-source-thispersondoesnotexist",
-    "asset-source-unsplash",
-    "color-list"
+    "asset-source-unsplash"
   ],
   "env": {
     "development": {
@@ -34,7 +34,7 @@
     },
     {
       "name": "part:@sanity/desk-tool/structure",
-      "path": "./deskStructure.js"
+      "path": "./structure/deskStructure.js"
     }
   ]
 }
