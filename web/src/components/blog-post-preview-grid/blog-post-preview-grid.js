@@ -1,33 +1,36 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import BlogPostPreview from './blog-post-preview'
+import { Wrapper, Container, Title, Listings } from './blog-post-preview-grid.css'
 
 function BlogPostPreviewGrid (props) {
   return (
-    <section>
+  <Wrapper>
+    <Container>
+      <h1>Journal</h1>
       {props.title && (
-        <h2 className={styles.headline}>
+        <Title>
           {props.browseMoreHref ? (
             <Link to={props.browseMoreHref}>{props.title}</Link>
           ) : (
             props.title
           )}
-        </h2>
+        </Title>
       )}
-      <ul>
+      <Listings>
         {props.nodes &&
           props.nodes.map(node => (
-            <li key={node.id}>
-              <BlogPostPreview {...node} />
-            </li>
-          ))}
-      </ul>
+            <BlogPostPreview {...node} />
+          ))
+        }
+      </Listings>
       {props.browseMoreHref && (
         <div>
           <Link to={props.browseMoreHref}>Browse more</Link>
         </div>
       )}
-    </section>
+    </Container>
+  </Wrapper>
   )
 }
 

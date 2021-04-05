@@ -1,21 +1,29 @@
 import styled from 'styled-components';
 
-.root {
-  margin: 2em 0 4em;
-}
+export const Wrapper = styled.section`
+  background-color: #000;
+`
 
-.headline {
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
+export const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1440px;
+
+  & h1 {
+    color: #fff;
+    margin-bottom: 4rem;
+  }
+`
+
+export const Title = styled.h2`
   margin: 2rem 0;
 
   @nest & a {
     color: inherit;
     text-decoration: none;
   }
-}
+`
 
-.grid {
+export const Listings = styled.div`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -23,31 +31,23 @@ import styled from 'styled-components';
   grid-template-columns: 1fr;
   grid-column-gap: 2em;
   grid-row-gap: 2em;
+`
 
-  @media (--media-min-small) {
-    grid-template-columns: 1fr 1fr;
-  }
+// .browseMoreNav {
+//   composes: small from './typography.module.css';
+//   margin-top: 1rem;
+//   text-align: right;
 
-  @media (--media-min-medium) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+//   @nest & a {
+//     display: inline-block;
+//     padding: 0.5rem 0;
+//     color: inherit;
+//     text-decoration: none;
 
-.browseMoreNav {
-  composes: small from './typography.module.css';
-  margin-top: 1rem;
-  text-align: right;
-
-  @nest & a {
-    display: inline-block;
-    padding: 0.5rem 0;
-    color: inherit;
-    text-decoration: none;
-
-    @media (hover: hover) {
-      @nest &:hover {
-        color: var(--color-accent);
-      }
-    }
-  }
-}
+//     @media (hover: hover) {
+//       @nest &:hover {
+//         color: var(--color-accent);
+//       }
+//     }
+//   }
+// }
