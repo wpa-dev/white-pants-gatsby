@@ -12,7 +12,7 @@ function myAsyncSlugifier(input) {
 export default {
   name: 'route',
   type: 'document',
-  title: 'Landing page routes',
+  title: 'Landing Page Routes',
   icon: MdLink,
   initialValue: {
     useSiteTitle: false,
