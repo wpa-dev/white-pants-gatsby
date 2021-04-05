@@ -1,4 +1,4 @@
-import { BiLinkExternal, BiFontColor } from 'react-icons/bi'
+import { BiLinkExternal } from 'react-icons/bi'
 
 /**
  * This is the schema definition for the rich text fields used for
