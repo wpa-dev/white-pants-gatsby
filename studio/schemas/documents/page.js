@@ -15,16 +15,6 @@ export default {
       name: 'description',
       title: 'Meta description',
       type: 'text'
-    },
-    {
-      name: 'content',
-      title: 'Page sections',
-      type: 'array',
-      description: 'Add, edit, and reorder sections',
-      of: [
-        { type: 'blockContent' },
-        { type: 'ctaPlug' },
-      ]
-    }    
+    }
   ]
 }
