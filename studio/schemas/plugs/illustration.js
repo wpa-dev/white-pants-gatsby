@@ -4,8 +4,8 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'Image',
       name: 'image',
+      title: 'Image',
       type: 'mainImage'
     },
     {
@@ -14,8 +14,8 @@ export default {
       type: 'color' 
     },
     {
-      title: 'Body',
       name: 'body',
+      title: 'Body',
       type: 'blockContent'
     },
     {

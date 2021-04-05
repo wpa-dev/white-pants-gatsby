@@ -4,19 +4,19 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'Title',
       name: 'title',
+      title: 'Title',
       type: 'string',
       validation: Rule => Rule.required().min(1).max(32)
     },
     {
-      title: 'Image',
       name: 'image',
+      title: 'Image',
       type: 'mainImage'
     },
     {
-      title: 'Excerpt',
       name: 'excerpt',
+      title: 'Excerpt',
       type: 'blockContent'
     },
     {
