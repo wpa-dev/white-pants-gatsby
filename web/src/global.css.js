@@ -97,7 +97,7 @@ export default createGlobalStyle`
     border-spacing: 0;
   }
 
-  section {
+  section, main {
     position: relative;
     z-index: 3;
   }
