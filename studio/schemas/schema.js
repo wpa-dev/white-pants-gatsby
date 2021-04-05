@@ -20,9 +20,11 @@ import siteSettings from './documents/siteSettings'
 import blockContent from './objects/blockContent'
 import blockText from './objects/blockText'
 import cta from './objects/cta'
+// import feature from './objects/feature'
+import mainImage from './objects/mainImage'
 import postAuthor from './objects/postAuthor'
 import projectMember from './objects/projectMember'
-import mainImage from './objects/mainImage'
+// import projectPreview from './objects/projectPreview'
 import slideshow from './objects/slideshow'
 
 // Plugs
