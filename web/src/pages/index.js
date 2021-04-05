@@ -18,6 +18,7 @@ export const query = graphql`
 
     page: sanityHomepage {
       _rawHeroSlideshow(resolveReferences: {maxDepth: 10})
+      _rawIntroBlock(resolveReferences: {maxDepth: 10})
     }
 
     projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
@@ -151,7 +152,8 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
 
-  const content = (data.page || [])
+  const images = (data.page._rawHeroSlideshow || [])
+  const intro =  (data.page._rawIntroBlock || [])
 
   if (!site) {
     throw new Error(
@@ -161,8 +163,8 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <HeroSlider images={content._rawHeroSlideshow.images} />
-      <BigText />
+      <HeroSlider images={images} />
+      <BigText blocks={intro} />
       <Gallery items={data.homeJson.gallery} />
     </Layout>
   )

@@ -10,7 +10,7 @@ export const query = graphql`
     page: sanityPage(_id: { regex: "/(drafts.|)office/" }) {
       id
       title
-      _rawBody
+      description
     }
   }
 `
@@ -37,7 +37,6 @@ const WorkPage = props => {
   return (
     <Layout>
       <h1>{page.title}</h1>
-      <BlockContent blocks={page._rawBody || []} />
     </Layout>
   )
 }

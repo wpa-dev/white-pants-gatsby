@@ -11,7 +11,7 @@ export const query = graphql`
     page: sanityPage(_id: { regex: "/(drafts.|)office/" }) {
       id
       title
-      _rawBody
+      description
     }
     people: allSanityPerson {
       edges {
@@ -54,7 +54,6 @@ const OfficePage = props => {
   return (
     <Layout>
       <h1>{page.title}</h1>
-      <BlockContent blocks={page._rawBody || []} />
       {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
     </Layout>
   )
