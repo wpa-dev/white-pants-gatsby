@@ -1,9 +1,8 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdBusiness, MdSettings, MdHome } from 'react-icons/md'
+import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
-import PreviewIFrame from './src/components/previewIFrame'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings', 'homepage']
+const hiddenTypes = ['category', 'companyInfo', 'homepage', 'page', 'person', 'post', 'project', 'siteSettings']
 
 export default () =>
   S.list()
@@ -34,12 +33,10 @@ export default () =>
       S.documentListItem()
         .title('Homepage')
         .schemaType('homepage')
-        .icon(MdHome)
         .child(
           S.document()
             .schemaType('homepage')
             .documentId('homepage')
-            .views([S.view.form(), PreviewIFrame()])
         ),
       S.listItem()
         .title('Pages')
@@ -72,12 +69,12 @@ export default () =>
         .schemaType('project')
         .child(S.documentTypeList('project')),
       S.listItem()
-        .title('Blog posts')
+        .title('Blog Posts')
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
         .title('Categories')
         .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .child(S.documentTypeList('category').title('Categories')),        
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ])
