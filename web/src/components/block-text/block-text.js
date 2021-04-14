@@ -6,7 +6,7 @@ const serializers = {
     block (props) {
       switch (props.node.style) {
         default:
-          return <p>{props.children}</p>
+          return <span>{props.children}</span>
       }
     }
   }
