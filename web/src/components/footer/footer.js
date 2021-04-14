@@ -12,7 +12,7 @@ function MailTo ({ email, subject = '', body = '', children }) {
   return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
 
-MailTo.proptypes = {
+MailTo.propTypes = {
   email: PropTypes.string.isRequired
 }
 
