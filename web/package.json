@@ -1,7 +1,7 @@
 {
   "name": "white-pants-gatsby",
   "license": "MIT",
-  "author": "Nate Tlaseca <nate@whitepantsagency.com>",
+  "author": "Nate Tlaseca <nate.tlaseca@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
     "serve": "gatsby serve",
@@ -18,10 +18,7 @@
     ]
   },
   "dependencies": {
-    "@reach/dialog": "^0.13.2",
-    "@reach/router": "^1.3.4",
-    "@reach/visually-hidden": "^0.13.2",
-    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^0.140.22",
     "babel-plugin-styled-components": "^1.10.0",
     "date-fns": "^2.19.0",
@@ -33,23 +30,20 @@
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^3.1.2",
-    "gatsby-plugin-sitemap": "^3.0.0",
+    "gatsby-plugin-sitemap": "^4.1.0",
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-plugin-webpack-size": "^2.0.1",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-sanity": "^7.0.0",
     "gatsby-transformer-json": "^3.0.0",
-    "gatsby-transformer-remark": "^3.0.0",
+    "gatsby-transformer-remark": "^4.2.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "intersection-observer": "^0.12.0",
-    "postcss": "^8.2.7",
-    "postcss-loader": "^5.0.0",
     "prop-types": "^15.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-pose": "^4.0.5",
-    "react-post": "^1.0.3",
+    "react-redux": "^7.2.4",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -57,6 +51,6 @@
     "core-js": "^3.9.1",
     "directory-named-webpack-plugin": "^4.0.0",
     "mkdirp": "^1.0.4",
-    "node-gyp": "^7.1.2"
+    "node-gyp": "^8.0.0"
   }
 }
