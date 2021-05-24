@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Head from 'components/head';
 import Header from 'components/header';
 import GlobalStyle from 'global.css.js';
+import Transition from 'components/transition';
 import Footer from 'components/footer';
 
 const Layout = ({ data, children }) => (
@@ -11,8 +12,10 @@ const Layout = ({ data, children }) => (
     <GlobalStyle />
     <Head />
     <Header title={data.site.siteMetadata.siteTitle} />
-    {children}
-    <Footer />
+    <Transition>
+      {children}
+      <Footer />
+    </Transition>
   </div>
 );
 
